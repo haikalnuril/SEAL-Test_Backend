@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 
+const routes = require("./routes");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +27,8 @@ app.get("/", (req, res) => {
         })
     }
 })
+
+app.use("/api/v1", routes);
 
 app.listen(PORT, () => {
     console.log(`server running in port ${PORT}`);

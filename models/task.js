@@ -33,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.TEXT,
                 allowNull: false,
             },
+            deadline: {
+                type: DataTypes.DATE,
+                allowNull: false,
+            },
             projectId: DataTypes.INTEGER,
             userId: DataTypes.INTEGER,
         },

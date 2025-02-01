@@ -53,10 +53,12 @@ module.exports = (sequelize, DataTypes) => {
             photo: {
                 type: DataTypes.TEXT,
             },
+            deletedAt: DataTypes.DATE,
         },
         {
             sequelize,
             modelName: "user",
+            paranoid: true,
             hooks: {
                 beforeSave: async (user) => {
                     if (user.password) {
